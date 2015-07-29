@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="static/css/semantic.min.css">
+		<title>Desktop for Dcard</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.$ = window.jQuery = require('./static/javascript/jquery-2.1.4.min.js');
+		</script>
+		<script src="static/javascript/semantic.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.menu .item')
+				  .tab()
+				;
+			});
+		</script>
+
+		<div class="ui top attached tabular menu">
+		  <a class="active item" data-tab="first">全部</a>
+		  <a class="item" data-tab="second">有趣</a>
+		  <a class="item" data-tab="third">男女</a>
+		</div>
+		<div class="ui bottom attached active tab segment" data-tab="first">
+			<table class="ui striped table">
+			  <thead>
+			    <tr>
+			      <th>喜歡</th>
+				  <th>回應</th>
+			      <th>主題</th>
+			      <th>作者</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td>John Lilki</td>
+			      <td>September 14, 2013</td>
+			      <td>jhlilk22@yahoo.com</td>
+			      <td>No</td>
+			    </tr>
+			    <tr>
+			      <td>Jamie Harington</td>
+			      <td>January 11, 2014</td>
+			      <td>jamieharingonton@yahoo.com</td>
+			      <td>Yes</td>
+			    </tr>
+			    <tr>
+			      <td>Jill Lewis</td>
+			      <td>May 11, 2014</td>
+			      <td>jilsewris22@yahoo.com</td>
+			      <td>Yes</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		<div class="ui bottom attached tab segment" data-tab="second">
+		  有趣
+		</div>
+		<div class="ui bottom attached tab segment" data-tab="third">
+		  男女
+		</div>
+
+	</body>
+</html>
