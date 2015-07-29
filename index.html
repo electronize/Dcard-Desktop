@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 	<head>
@@ -7,6 +6,7 @@
 		<title>Desktop for Dcard</title>
 	</head>
 	<body>
+		<script src="./menu.js"></script>
 		<script type="text/javascript">
 			window.$ = window.jQuery = require('./static/javascript/jquery-2.1.4.min.js');
 		</script>
@@ -18,14 +18,14 @@
 				;
 			});
 		</script>
-
+		<script src="static/javascript/angular.min.js"></script>
 		<div class="ui top attached tabular menu">
 		  <a class="active item" data-tab="first">全部</a>
 		  <a class="item" data-tab="second">有趣</a>
 		  <a class="item" data-tab="third">男女</a>
 		</div>
 		<div class="ui bottom attached active tab segment" data-tab="first">
-			<table class="ui striped table">
+			<table id="allposts" class="ui striped table">
 			  <thead>
 			    <tr>
 			      <th>喜歡</th>
@@ -35,32 +35,45 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
-			      <td>John Lilki</td>
-			      <td>September 14, 2013</td>
-			      <td>jhlilk22@yahoo.com</td>
-			      <td>No</td>
-			    </tr>
-			    <tr>
-			      <td>Jamie Harington</td>
-			      <td>January 11, 2014</td>
-			      <td>jamieharingonton@yahoo.com</td>
-			      <td>Yes</td>
-			    </tr>
-			    <tr>
-			      <td>Jill Lewis</td>
-			      <td>May 11, 2014</td>
-			      <td>jilsewris22@yahoo.com</td>
-			      <td>Yes</td>
-			    </tr>
+				  <script type="text/javascript">
+				  	require('./forum-hot-posts.js').forumRequest('all');
+				  </script>
 			  </tbody>
 			</table>
 		</div>
 		<div class="ui bottom attached tab segment" data-tab="second">
-		  有趣
+			<table id="funnyposts" class="ui striped table">
+			  <thead>
+			    <tr>
+			      <th>喜歡</th>
+				  <th>回應</th>
+			      <th>主題</th>
+			      <th>作者</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+				  <script type="text/javascript">
+					require('./forum-hot-posts.js').forumRequest('funny');
+				  </script>
+			  </tbody>
+			</table>
 		</div>
 		<div class="ui bottom attached tab segment" data-tab="third">
-		  男女
+			<table id="bgposts" class="ui striped table">
+			  <thead>
+			    <tr>
+			      <th>喜歡</th>
+				  <th>回應</th>
+			      <th>主題</th>
+			      <th>作者</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+				  <script type="text/javascript">
+					require('./forum-hot-posts.js').forumRequest('bg');
+				  </script>
+			  </tbody>
+			</table>
 		</div>
 
 	</body>
