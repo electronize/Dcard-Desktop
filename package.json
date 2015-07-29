@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/electronize/Dcard-Desktop.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "electronize",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/electronize/Dcard-Desktop/issues"
   },
