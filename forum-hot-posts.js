@@ -1,5 +1,7 @@
 var request = require('request');
 
+var GENDER_SYMBOL = {F: '<i class="woman icon"></i>', M: '<i class="man icon"></i>'};
+
 module.exports = {
 
   forumRequest: function(ForumName) {
@@ -12,7 +14,7 @@ module.exports = {
 
         for (var i = 0, postsCount = postsJson.length; i < postsCount; i++) {
 
-          var postThread = '<tr><td>' + postsJson[i].likeCount + '</td><td>' + postsJson[i].comment + '</td><td>' + postsJson[i].version[0].title + '</td><td>' + postsJson[i].member.gender + ' ' +  postsJson[i].member.school  + '</td></tr>';
+          var postThread = '<tr><td>' + postsJson[i].likeCount + '</td><td>' + postsJson[i].comment + '</td><td>' + postsJson[i].version[0].title + '</td><td>' + GENDER_SYMBOL[postsJson[i].member.gender] + ' ' +  postsJson[i].member.school  + '</td></tr>';
 
           $(domName).append(postThread);
         }
